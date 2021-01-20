@@ -2,12 +2,12 @@
     <el-form id="logon">
         <h2 style="margin-left: 4%">后台管理系统</h2>
             <el-form-item :model="user" >
-                <el-col span=7>
+                <el-col :span=7>
                 <el-input placeholder="请输入用户名" v-model="user.name"></el-input>
                 </el-col>
             </el-form-item>
             <el-form-item >
-                <el-col span=7>
+                <el-col :span=7>
                     <el-input placeholder="请输入密码" show-password v-model="user.password"></el-input>
                 </el-col>
             </el-form-item>
@@ -19,6 +19,7 @@
 <script>
     import axios from 'axios';
     import '../../vue.config'
+
     export default {
         name: "LogonUser",
         data(){
@@ -35,7 +36,7 @@
                     let formData = JSON.stringify(this.user);
                     axios({
                         method:"post",
-                        url:"/verifyUser",
+                        url:"/api/verifyUser",
                         headers: {
                             "Content-Type": "text/plain"
                         },
@@ -44,7 +45,9 @@
                         console.log(response);
                         var r = response.data.toString();
                         if("index"==r){
-                            this.$alert(r,'友情提示', "success", "success");
+                            sessionStorage.setItem("token", 'true');
+                            this.$router.push('/index')
+                            // this.$alert(r,'友情提示', "success", "success");
                         }else{
                             this.$alert(r,'友情提示', "warning","warning");
                         }

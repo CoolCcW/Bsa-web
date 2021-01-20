@@ -6335,6 +6335,11 @@
   dependencies:
     "got" "^8.0.3"
 
+"vue-router@^3.4.9":
+  "integrity" "sha512-CGAKWN44RqXW06oC+u4mPgHLQQi2t6vLD/JbGRDAXm0YpMv0bgpKuU5bBd7AvMgfTz9kXVRIWKHqRwGEb8xFkA=="
+  "resolved" "https://registry.npmjs.org/vue-router/-/vue-router-3.4.9.tgz"
+  "version" "3.4.9"
+
 "vue-simple-alert@^1.1.1":
   "integrity" "sha512-iyQorOyO9Ar+bgvvyshQtkgvXTocR3hu0D1PD6R9mEJ1M3JWvjFg5UoL5rIqmqhkfMg6lzwMW9Bu6iwHUdcqig=="
   "resolved" "https://registry.npmjs.org/vue-simple-alert/-/vue-simple-alert-1.1.1.tgz"
