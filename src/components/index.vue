@@ -1,13 +1,22 @@
 <template>
-    <div>欢迎来到个人直播间！！！！！！！！！！！！！！！！</div>
+    <div class="menu">
+        <topmenu></topmenu>
+        <LeftMenu>1111111111</LeftMenu>
+    </div>
+
 </template>
 
 <script>
+    import topmenu from "./topmenu";
+    import LeftMenu from "./leftmenu";
     export default {
-        name: "index"
+        name: "index",
+        components: {
+            topmenu,
+            LeftMenu
+        },
     }
 </script>
 
 <style scoped>
-
 </style>

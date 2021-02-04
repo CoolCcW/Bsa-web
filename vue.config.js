@@ -35,7 +35,7 @@ module.exports = {
         // 配置多个代理
         proxy: {
             "/api": {
-                target: "http://192.168.43.29:9000", // 本地模拟数据服务器
+                target: "http://192.168.216.9:9000", // 本地模拟数据服务器
                 changeOrigin: true,
                 pathRewrite: {
                     "^/api": "" // 去掉接口地址中的api字符串
