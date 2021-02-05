@@ -11,7 +11,7 @@
             <!-- 用户名下拉菜单 -->
             <el-dropdown class="user-name" trigger="click">
                         <span class="el-dropdown-link">
-                            wyd
+                            {{user.name}}
                             <i class="el-icon-caret-bottom"></i>
                         </span>
                 <el-dropdown-menu slot="dropdown">
@@ -26,9 +26,16 @@
 </template>
 
 <script>
+    import {mapState} from 'vuex';
+
     var flag = false;
     export default {
         name: "top-menu",
+        computed:{
+          ...mapState([
+              'user'
+          ])
+        },
         methods: {
             cae() {
                 if (flag) {

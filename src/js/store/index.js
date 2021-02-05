@@ -5,6 +5,10 @@ Vue.use(Vuex)
 
 const store = new Vuex.Store({
     state: {
+        user:{
+            name:'',
+            password:''
+        },
         bol:true,
         tabs: [
             {
@@ -26,6 +30,9 @@ const store = new Vuex.Store({
         ]
     },
     mutations: {
+        makeUser(state,user){
+            state.user=user;
+        },
         bigger(state){
             state.bol=true;
             state.tabs=[

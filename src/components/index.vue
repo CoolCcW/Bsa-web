@@ -1,7 +1,7 @@
 <template>
     <div class="menu">
         <topmenu></topmenu>
-        <LeftMenu>1111111111</LeftMenu>
+        <LeftMenu></LeftMenu>
     </div>
 
 </template>

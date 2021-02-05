@@ -18,19 +18,23 @@
 
 <script>
     import axios from 'axios';
-    import '../../vue.config'
+    import '../../vue.config';
+    import {mapState} from 'vuex';
 
     export default {
         name: "LogonUser",
-        data(){
-            return{
-                user:{
-                    name:'',
-                    password:''
-                }
-            }
+        computed:{
+            ...mapState([
+                'user'
+            ]),
+        },
+        watch:{
+          user:'make'
         },
         methods:{
+            make(){
+                this.$store.commit("makeUser",this.user)
+            },
             submit(){
                     /* json格式提交： */
                     let formData = JSON.stringify(this.user);
