@@ -23,18 +23,15 @@
 
     export default {
         name: "LogonUser",
-        computed:{
-            ...mapState([
-                'user'
-            ]),
-        },
-        watch:{
-          user:'make'
+        data(){
+            return{
+                user:{
+                    name:'',
+                    password:''
+                }
+            }
         },
         methods:{
-            make(){
-                this.$store.commit("makeUser",this.user)
-            },
             submit(){
                     /* json格式提交： */
                     let formData = JSON.stringify(this.user);
@@ -50,6 +47,7 @@
                         var r = response.data.toString();
                         if("index"==r){
                             sessionStorage.setItem("token", 'true');
+                            sessionStorage.setItem("user", JSON.stringify(this.user));
                             this.$router.push('/index')
                             // this.$alert(r,'友情提示', "success", "success");
                         }else{

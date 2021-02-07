@@ -5,52 +5,53 @@ Vue.use(Vuex)
 
 const store = new Vuex.Store({
     state: {
-        user:{
-            name:'',
-            password:''
-        },
         bol:true,
         tabs: [
             {
                 menu: '系统首页',
-                iconmenu:'iconfont iconhome'
+                iconmenu:'iconfont iconhome',
+                url:'homepage'
             },
             {
                 menu: '视频播放',
-                iconmenu:'iconfont iconplay'
+                iconmenu:'iconfont iconplay',
+                url:'vidiomenu'
             },
             {
                 menu: '系统邮件',
-                iconmenu:'iconfont iconemail'
+                iconmenu:'iconfont iconemail',
+                url:'homepage'
             },
             {
                 menu: '系统设置',
-                iconmenu:'iconfont iconsetting'
+                iconmenu:'iconfont iconsetting',
+                url:'homepage'
             },
         ]
     },
     mutations: {
-        makeUser(state,user){
-            state.user=user;
-        },
         bigger(state){
             state.bol=true;
             state.tabs=[
                 {
                     menu: '系统首页',
-                    iconmenu:'iconfont iconhome'
+                    iconmenu:'iconfont iconhome',
+                    url:'homepage'
                 },
                 {
                     menu: '视频播放',
-                    iconmenu:'iconfont iconplay'
+                    iconmenu:'iconfont iconplay',
+                    url:'vidiomenu'
                 },
                 {
                     menu: '系统邮件',
-                    iconmenu:'iconfont iconemail'
+                    iconmenu:'iconfont iconemail',
+                    url:'homepage'
                 },
                 {
                     menu: '系统设置',
-                    iconmenu:'iconfont iconsetting'
+                    iconmenu:'iconfont iconsetting',
+                    url:'homepage'
                 },
             ]
         },
@@ -59,19 +60,23 @@ const store = new Vuex.Store({
             state.tabs= [
                 {
                     menu: '',
-                    iconmenu:'iconfont iconhome'
+                    iconmenu:'iconfont iconhome',
+                    url:'homepage'
                 },
                 {
                     menu: '',
-                    iconmenu:'iconfont iconplay'
+                    iconmenu:'iconfont iconplay',
+                    url:'vidiomenu'
                 },
                 {
                     menu: '',
-                    iconmenu:'iconfont iconemail'
+                    iconmenu:'iconfont iconemail',
+                    url:'homepage'
                 },
                 {
                     menu: '',
-                    iconmenu:'iconfont iconsetting'
+                    iconmenu:'iconfont iconsetting',
+                    url:'homepage'
                 },
             ]
         }

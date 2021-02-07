@@ -11,7 +11,7 @@
             <!-- 用户名下拉菜单 -->
             <el-dropdown class="user-name" trigger="click">
                         <span class="el-dropdown-link">
-                            {{user.name}}
+                            {{uname}}
                             <i class="el-icon-caret-bottom"></i>
                         </span>
                 <el-dropdown-menu slot="dropdown">
@@ -36,6 +36,11 @@
               'user'
           ])
         },
+        data() {
+            return {
+                uname:JSON.parse(sessionStorage.getItem('user')).name
+            }
+        },
         methods: {
             cae() {
                 if (flag) {
@@ -57,7 +62,7 @@
         -webkit-box-sizing: border-box;
         box-sizing: border-box;
         width: 100%;
-        height: 70px;
+        height: 10%;
         font-size: 22px;
         background-color: #263238;
     }

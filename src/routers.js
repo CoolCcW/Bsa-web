@@ -1,6 +1,7 @@
 // 引入组件
 import index from './components/index'
 import LogonUser from './components/LogonUser'
+import homepage from './components/menuVue/homePage'
 import VueRouter from 'vue-router'
 import Vue from "vue";
 Vue.use(VueRouter)
@@ -21,6 +22,12 @@ const router = new VueRouter({
     }, {
       path: '/index',
       component: index,
+      meta: {
+        requireAuth: true
+      }
+    }, {
+      path: '/homepage',
+      component: homepage,
       meta: {
         requireAuth: true
       }

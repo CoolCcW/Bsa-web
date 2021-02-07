@@ -9,6 +9,7 @@
 <script>
     import topmenu from "./topmenu";
     import LeftMenu from "./leftmenu";
+
     export default {
         name: "index",
         components: {
