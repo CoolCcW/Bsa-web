@@ -7,15 +7,19 @@ import router from './routers'
 import store from './js/store/index.js'
 import './assets/font-ali/iconfont.css'
 import Router from 'vue-router'
+import 'video.js/dist/video-js.css'
+import Video from 'video.js'
+import preventReClick from './js/store/preventReClick' //é˜²å¤šæ¬¡ç‚¹å‡»ï¼Œé‡å¤æäº¤
+
 const originalPush = Router.prototype.push
 Router.prototype.push = function push(location) {
   return originalPush.call(this, location).catch(err => err)
 }
 // axios.defaults.baseURL='/api'
 Vue.prototype.$axios = axios
-axios.defaults.baseURL = '/'  //¹Ø¼ü´úÂë
+axios.defaults.baseURL = '/'  //å…³é”®ä»£ç 
 Vue.use(axios)
-//ÌáÊ¾¿ò
+//æç¤ºæ¡†
 import VueSimpleAlert from "vue-simple-alert";
 Vue.use(VueSimpleAlert, { reverseButtons: true });
 

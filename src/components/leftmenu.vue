@@ -47,6 +47,7 @@
                     for (var i = 0; i < ele.length; i++) {
                         ele[i].style.width = "20%";
                         ele2[i].style.left="20%";
+                        ele2[i].style.width="100%";
 
                     }
                     ;
@@ -54,6 +55,7 @@
                     for (var i = 0; i < ele.length; i++) {
                         ele[i].style.width = "6%";
                         ele2[i].style.left="6%";
+                        ele2[i].style.width="117.6%";
                     }
                     ;
 

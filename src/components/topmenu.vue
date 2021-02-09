@@ -38,7 +38,7 @@
         },
         data() {
             return {
-                uname:JSON.parse(sessionStorage.getItem('user')).name
+                uname:JSON.parse(sessionStorage.getItem('user')).nickname
             }
         },
         methods: {

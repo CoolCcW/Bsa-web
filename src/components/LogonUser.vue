@@ -3,7 +3,7 @@
         <h2 style="margin-left: 4%">后台管理系统</h2>
             <el-form-item :model="user" >
                 <el-col :span=7>
-                <el-input placeholder="请输入用户名" v-model="user.name"></el-input>
+                <el-input placeholder="请输入用户名" v-model="user.nickname"></el-input>
                 </el-col>
             </el-form-item>
             <el-form-item >
@@ -19,15 +19,20 @@
 <script>
     import axios from 'axios';
     import '../../vue.config';
-    import {mapState} from 'vuex';
 
     export default {
         name: "LogonUser",
         data(){
             return{
                 user:{
-                    name:'',
-                    password:''
+                    nickname:'',
+                    password:'',
+                    phone:'',
+                    username:'',
+                    idcard:'',
+                    hobby:'',
+                    lastlogintime:'',
+                    makedate:''
                 }
             }
         },
@@ -44,8 +49,11 @@
                         data:formData
                     }).then((response)=>{
                         console.log(response);
-                        var r = response.data.toString();
-                        if("index"==r){
+                        var r = response.data;
+                        console.log(r);
+                        if("login"!=r){
+                            this.user = r;
+                            console.log("1111111"+JSON.stringify(this.user))
                             sessionStorage.setItem("token", 'true');
                             sessionStorage.setItem("user", JSON.stringify(this.user));
                             this.$router.push('/index')

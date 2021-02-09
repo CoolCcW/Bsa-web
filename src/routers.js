@@ -1,4 +1,4 @@
-// ÒıÈë×é¼ş
+// å¼•å…¥ç»„ä»¶
 import index from './components/index'
 import LogonUser from './components/LogonUser'
 import homepage from './components/menuVue/homePage'
@@ -7,7 +7,7 @@ import Vue from "vue";
 Vue.use(VueRouter)
 const router = new VueRouter({
   mode: "history",
-  // ÅäÖÃÒ³ÃæµÄÂ·ÓÉ
+  // é…ç½®é¡µé¢çš„è·¯ç”±
   routes: [
     {
       path: '/',
@@ -38,11 +38,11 @@ const router = new VueRouter({
 export default router;
 
 router.beforeEach((to, from, next) => {
-  if (to.meta.requireAuth) { // ÅĞ¶Ï¸ÃÂ·ÓÉÊÇ·ñĞèÒªµÇÂ¼È¨ÏŞ
-    if (sessionStorage.getItem("token") == 'true') { // ÅĞ¶Ï±¾µØÊÇ·ñ´æÔÚtoken
+  if (to.meta.requireAuth) { // åˆ¤æ–­è¯¥è·¯ç”±æ˜¯å¦éœ€è¦ç™»å½•æƒé™
+    if (sessionStorage.getItem("token") == 'true') { // åˆ¤æ–­æœ¬åœ°æ˜¯å¦å­˜åœ¨token
       next()
     } else {
-      // Î´µÇÂ¼,Ìø×ªµ½µÇÂ½Ò³Ãæ
+      // æœªç™»å½•,è·³è½¬åˆ°ç™»é™†é¡µé¢
       next({
         path: '/LogonUser'
       })
